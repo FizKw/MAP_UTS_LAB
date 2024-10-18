@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MAP_UTS_LAB</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_button">Sign In</string>
+    <string name="register_button">Register</string>
+    <string name="email_input_message">Email</string>
+    <string name="password_input_message">Password</string>
+</resources>
