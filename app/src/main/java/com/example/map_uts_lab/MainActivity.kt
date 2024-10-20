@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -26,10 +27,21 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-
-
-
         setContentView(R.layout.activity_main)
 
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            var selectedFragment: Fragment? = null
+            when(item.itemId){
+                R.id.nav_history -> selectedFragment = HistoryFragment()
+                R.id.nav_home -> selectedFragment = HomePageFragment()
+                R.id.nav_profile -> selectedFragment = ProfileFragment()
+            }
+            if (selectedFragment != null) {
+                supportFragmentManager.beginTransaction().replace(R.id.main_container, selectedFragment).commit()
+            }
+            true
+        }
+        bottomNavigationView.selectedItemId = R.id.nav_home
     }
 }
