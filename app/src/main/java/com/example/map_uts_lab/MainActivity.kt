@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         auth = FirebaseAuth.getInstance()
@@ -44,4 +45,5 @@ class MainActivity : AppCompatActivity() {
         }
         bottomNavigationView.selectedItemId = R.id.nav_home
     }
+
 }
